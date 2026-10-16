@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>눈대중 마스터 - 거리 재기 게임</title>
+<meta name="description" content="길이, 각도, 넓이를 눈대중으로 맞춰보세요. 당신의 감각은 몇 점?">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>📏 눈대중 마스터</h1>
+
+  <section id="start" class="screen">
+    <p class="lead">자 없이 눈으로만 재보세요.<br>길이 · 각도 · 넓이 · 중점 · 거리, 총 5라운드!</p>
+    <p>최고 점수: <b id="best">-</b></p>
+    <button id="btnPlay">시작하기</button>
+    <button id="btnDaily" class="sub">오늘의 도전 (매일 같은 문제)</button>
+  </section>
+
+  <section id="game" class="screen hidden">
+    <div class="bar"><span id="round"></span><span id="total"></span></div>
+    <p id="question"></p>
+    <canvas id="cv" width="600" height="400"></canvas>
+    <div id="inputRow">
+      <input id="answer" type="number" inputmode="decimal" placeholder="숫자 입력">
+      <span id="unit"></span>
+    </div>
+    <button id="btnSubmit">확인</button>
+    <p id="result"></p>
+    <button id="btnNext" class="hidden">다음</button>
+  </section>
+
+  <section id="end" class="screen hidden">
+    <h2>결과</h2>
+    <p class="big"><span id="final">0</span> / 500</p>
+    <p id="grade"></p>
+    <button id="btnShare">결과 복사하기</button>
+    <button id="btnAgain" class="sub">다시 하기</button>
+    <p id="copied" class="hidden">복사됨!</p>
+  </section>
+</main>
+<script src="game.js"></script>
+</body>
+</html>
