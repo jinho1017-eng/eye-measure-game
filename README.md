@@ -30,9 +30,14 @@
 npx serve .
 ```
 
+## 로그인과 랭킹 (선택)
+GitHub/Google 로그인과 전체 랭킹은 Supabase로 동작합니다. `config.js`가 비어 있으면 꺼지고 게임만 동작합니다.
+설정 방법은 [SETUP.md](SETUP.md), DB 구조는 [supabase.sql](supabase.sql)을 참고하세요.
+
 ## 기술
-- HTML, CSS, JavaScript (Canvas, WebAudio), 외부 라이브러리 없음
-- 최고 점수는 브라우저 `localStorage`에 저장되며 서버나 로그인은 사용하지 않습니다.
+- HTML, CSS, JavaScript (Canvas, WebAudio)
+- 로그인/랭킹: Supabase (`supabase-js` CDN, Postgres RLS)
+- 개인 최고 점수는 브라우저 `localStorage`에 저장됩니다.
 
 ## 파일 구성
 - `index.html` 화면 구조

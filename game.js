@@ -288,6 +288,7 @@ function finish() {
   $("newBest").textContent = msg;
   $("breakdown").innerHTML = scores.map((s, i) => `<li><span>${i + 1}. ${TYPES[order[i]].q.split(/[.?]/)[0]}</span><b>${s}</b></li>`).join("");
   $("copied").classList.add("hidden");
+  Online.onFinish({ mode: isDaily ? "daily" : "r" + rounds, score: total });
   sfx("end"); renderBest(); show("end");
 }
 

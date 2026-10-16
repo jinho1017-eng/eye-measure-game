@@ -19,6 +19,13 @@
     <button id="btnMute" class="icon" aria-label="소리 켜기/끄기">🔊</button>
   </header>
 
+  <div id="authBox" class="hidden">
+    <span id="authName">로그인하면 랭킹에 등록할 수 있어요</span>
+    <button id="btnLoginGithub" class="sub small">GitHub 로그인</button>
+    <button id="btnLoginGoogle" class="sub small">Google 로그인</button>
+    <button id="btnLogout" class="sub small hidden">로그아웃</button>
+  </div>
+
   <section id="start" class="screen">
     <p class="lead">자 없이 눈으로만 재보세요.<br>길이 · 각도 · 넓이 · 중점 · 원의 중심 · 직각 · 삼등분 · 점 개수<br>9가지 유형이 랜덤으로 나와요!</p>
     <ul class="bests">
@@ -28,6 +35,18 @@
     <button id="btnPlay">시작하기 (5라운드)</button>
     <button id="btnLong" class="sub">10라운드 도전</button>
     <button id="btnDaily" class="sub">오늘의 도전 (매일 같은 문제)</button>
+    <button id="btnBoard" class="sub hidden">🏆 전체 랭킹</button>
+  </section>
+
+  <section id="board" class="screen hidden">
+    <h2>🏆 전체 랭킹</h2>
+    <div>
+      <button data-board="r5" class="small">5라운드</button>
+      <button data-board="r10" class="sub small">10라운드</button>
+      <button data-board="daily" class="sub small">오늘의 도전</button>
+    </div>
+    <ol id="boardList"></ol>
+    <button id="btnBoardBack" class="sub">돌아가기</button>
   </section>
 
   <section id="game" class="screen hidden">
@@ -50,11 +69,19 @@
     <p id="grade"></p>
     <p id="newBest" class="gold"></p>
     <ul id="breakdown"></ul>
+    <div id="rankBox" class="hidden">
+      <p id="rankMsg"></p>
+      <input id="nickInput" maxlength="12" placeholder="닉네임">
+      <button id="btnRankSubmit">랭킹 등록</button>
+    </div>
     <button id="btnShare">결과 복사하기</button>
     <button id="btnAgain" class="sub">처음으로</button>
     <p id="copied" class="hidden">복사됨! 친구에게 붙여넣어 보세요</p>
   </section>
 </main>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
 <script src="game.js"></script>
+<script src="online.js"></script>
 </body>
 </html>

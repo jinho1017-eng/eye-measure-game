@@ -54,6 +54,14 @@ input {
 #breakdown li { display: flex; justify-content: space-between; gap: 12px; padding: 6px 4px; border-bottom: 1px solid #232842; color: #b9bfd3; }
 #breakdown b { color: #eef0f6; }
 
+#authBox { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px; margin-bottom: 8px; font-size: .9rem; color: #b9bfd3; }
+button.small { padding: 6px 12px; font-size: .85rem; margin: 2px; }
+#rankBox { margin: 14px auto; padding: 12px; max-width: 460px; background: #1b1f2c; border-radius: 12px; }
+#rankMsg { margin: 0 0 8px; line-height: 1.5; }
+#boardList { text-align: left; max-width: 420px; margin: 12px auto; padding: 0; list-style: none; }
+#boardList li { display: flex; justify-content: space-between; padding: 8px 10px; border-bottom: 1px solid #232842; }
+#boardList li.mine { background: #232842; color: #ffd166; border-radius: 6px; }
+
 @media (max-width: 420px) {
   h1 { font-size: 1.4rem; }
   button { width: 100%; margin: 6px 0; }
