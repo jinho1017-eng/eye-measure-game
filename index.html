@@ -4,22 +4,35 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>눈대중 마스터 - 거리 재기 게임</title>
-<meta name="description" content="길이, 각도, 넓이를 눈대중으로 맞춰보세요. 당신의 감각은 몇 점?">
+<meta name="description" content="길이, 각도, 넓이, 중점, 점 개수를 눈대중으로 맞춰보세요. 당신의 감각은 몇 점?">
+<meta property="og:type" content="website">
+<meta property="og:title" content="📏 눈대중 마스터">
+<meta property="og:description" content="자 없이 눈으로만 재보세요. 당신의 눈대중은 몇 점?">
+<meta name="theme-color" content="#12141c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%8F%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main>
-  <h1>📏 눈대중 마스터</h1>
+  <header>
+    <h1>📏 눈대중 마스터</h1>
+    <button id="btnMute" class="icon" aria-label="소리 켜기/끄기">🔊</button>
+  </header>
 
   <section id="start" class="screen">
-    <p class="lead">자 없이 눈으로만 재보세요.<br>길이 · 각도 · 넓이 · 중점 · 거리, 총 5라운드!</p>
-    <p>최고 점수: <b id="best">-</b></p>
-    <button id="btnPlay">시작하기</button>
+    <p class="lead">자 없이 눈으로만 재보세요.<br>길이 · 각도 · 넓이 · 중점 · 원의 중심 · 직각 · 삼등분 · 점 개수<br>9가지 유형이 랜덤으로 나와요!</p>
+    <ul class="bests">
+      <li>5라운드 최고 <b id="best5">-</b></li>
+      <li>10라운드 최고 <b id="best10">-</b></li>
+    </ul>
+    <button id="btnPlay">시작하기 (5라운드)</button>
+    <button id="btnLong" class="sub">10라운드 도전</button>
     <button id="btnDaily" class="sub">오늘의 도전 (매일 같은 문제)</button>
   </section>
 
   <section id="game" class="screen hidden">
     <div class="bar"><span id="round"></span><span id="total"></span></div>
+    <div class="track"><div id="progress"></div></div>
     <p id="question"></p>
     <canvas id="cv" width="600" height="400"></canvas>
     <div id="inputRow">
@@ -27,17 +40,19 @@
       <span id="unit"></span>
     </div>
     <button id="btnSubmit">확인</button>
-    <p id="result"></p>
+    <p id="result" aria-live="polite"></p>
     <button id="btnNext" class="hidden">다음</button>
   </section>
 
   <section id="end" class="screen hidden">
     <h2>결과</h2>
-    <p class="big"><span id="final">0</span> / 500</p>
+    <p class="big"><span id="final">0</span> / <span id="finalMax">500</span></p>
     <p id="grade"></p>
+    <p id="newBest" class="gold"></p>
+    <ul id="breakdown"></ul>
     <button id="btnShare">결과 복사하기</button>
-    <button id="btnAgain" class="sub">다시 하기</button>
-    <p id="copied" class="hidden">복사됨!</p>
+    <button id="btnAgain" class="sub">처음으로</button>
+    <p id="copied" class="hidden">복사됨! 친구에게 붙여넣어 보세요</p>
   </section>
 </main>
 <script src="game.js"></script>
